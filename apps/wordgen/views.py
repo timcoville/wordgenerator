@@ -3,7 +3,7 @@ from django.utils.crypto import get_random_string
 
 
 def index(request):
-    if 'count' not in request.session:
+    if 'count' not in request.session or request.session['count'] == 0:
         request.session['count'] = 1
     if 'word' not in request.session:
         word = get_random_string(length=14)
@@ -19,3 +19,7 @@ def random_word(request):
     word = get_random_string(length=14)
     request.session['word'] = word.upper()
     return redirect ("/")
+
+def reset(request):
+    request.session['count'] = 0
+    return redirect("/")

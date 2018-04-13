@@ -16,7 +16,10 @@
             {% csrf_token %}
             <input type="submit" value="Generate">
         </form>
-
+        <form action="/reset/" method="POST">
+            {% csrf_token %}
+            <input type="submit" value="Reset">
+        </form>
     </div>
 </body>
 </html>

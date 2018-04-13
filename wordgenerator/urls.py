@@ -18,5 +18,6 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^', include("apps.wordgen.urls")),
-    url(r'^random_word/', include("apps.wordgen.urls"))
+    url(r'^random_word/', include("apps.wordgen.urls")),
+    url(r'^reset/', include("apps.wordgen.urls"))
 ]
